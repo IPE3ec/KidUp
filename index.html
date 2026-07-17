@@ -1,229 +1,241 @@
 <!DOCTYPE html>
-
-<html class="light" lang="es"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;family=Quicksand:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "surface-container-high": "#dce9ff",
-                    "on-error": "#ffffff",
-                    "secondary-container": "#6cf8bb",
-                    "tertiary-container": "#996100",
-                    "tertiary-fixed-dim": "#ffb95f",
-                    "surface": "#f8f9ff",
-                    "secondary-fixed-dim": "#4edea3",
-                    "tertiary": "#784b00",
-                    "primary-fixed": "#dbe1ff",
-                    "on-tertiary": "#ffffff",
-                    "primary": "#004ac6",
-                    "on-secondary-fixed": "#002113",
-                    "surface-container-lowest": "#ffffff",
-                    "on-secondary": "#ffffff",
-                    "surface-dim": "#cbdbf5",
-                    "on-secondary-container": "#00714d",
-                    "outline": "#737686",
-                    "surface-variant": "#d3e4fe",
-                    "secondary-fixed": "#6ffbbe",
-                    "on-background": "#0b1c30",
-                    "on-tertiary-fixed": "#2a1700",
-                    "on-secondary-fixed-variant": "#005236",
-                    "surface-container-low": "#eff4ff",
-                    "inverse-primary": "#b4c5ff",
-                    "inverse-on-surface": "#eaf1ff",
-                    "surface-tint": "#0053db",
-                    "on-tertiary-fixed-variant": "#653e00",
-                    "on-primary-fixed-variant": "#003ea8",
-                    "surface-container": "#e5eeff",
-                    "on-primary": "#ffffff",
-                    "surface-bright": "#f8f9ff",
-                    "secondary": "#006c49",
-                    "on-tertiary-container": "#ffeedd",
-                    "on-error-container": "#93000a",
-                    "on-primary-fixed": "#00174b",
-                    "background": "#f8f9ff",
-                    "tertiary-fixed": "#ffddb8",
-                    "outline-variant": "#c3c6d7",
-                    "on-surface-variant": "#434655",
-                    "on-primary-container": "#eeefff",
-                    "surface-container-highest": "#d3e4fe",
-                    "on-surface": "#0b1c30",
-                    "primary-fixed-dim": "#b4c5ff",
-                    "error-container": "#ffdad6",
-                    "error": "#ba1a1a",
-                    "primary-container": "#2563eb",
-                    "inverse-surface": "#213145"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0.25rem",
-                    "lg": "0.5rem",
-                    "xl": "0.75rem",
-                    "full": "9999px"
-            },
-            "spacing": {
-                    "stack-lg": "24px",
-                    "base": "8px",
-                    "stack-sm": "4px",
-                    "gutter": "16px",
-                    "stack-md": "12px",
-                    "container-padding": "20px"
-            },
-            "fontFamily": {
-                    "reward-display": ["Plus Jakarta Sans"],
-                    "headline-lg": ["Plus Jakarta Sans"],
-                    "headline-lg-mobile": ["Plus Jakarta Sans"],
-                    "body-lg": ["Quicksand"],
-                    "label-caps": ["Plus Jakarta Sans"],
-                    "headline-md": ["Plus Jakarta Sans"],
-                    "body-md": ["Quicksand"]
-            },
-            "fontSize": {
-                    "reward-display": ["48px", {"lineHeight": "48px", "fontWeight": "800"}],
-                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
-                    "headline-lg-mobile": ["26px", {"lineHeight": "32px", "fontWeight": "700"}],
-                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "500"}],
-                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "800"}],
-                    "headline-md": ["24px", {"lineHeight": "30px", "fontWeight": "700"}],
-                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "500"}]
+<html class="light" lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <title>KidUp - Iniciar Sesión</title>
+    
+    <!-- PWA Meta -->
+    <link rel="manifest" href="manifest.json" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="KidUp" />
+    <meta name="theme-color" content="#004ac6" />
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-high": "#dce9ff",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#6cf8bb",
+                        "tertiary-container": "#996100",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "surface": "#f8f9ff",
+                        "secondary-fixed-dim": "#4edea3",
+                        "tertiary": "#784b00",
+                        "primary-fixed": "#dbe1ff",
+                        "on-tertiary": "#ffffff",
+                        "primary": "#004ac6",
+                        "on-secondary-fixed": "#002113",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-dim": "#cbdbf5",
+                        "on-secondary-container": "#00714d",
+                        "outline": "#737686",
+                        "surface-variant": "#d3e4fe",
+                        "secondary-fixed": "#6ffbbe",
+                        "on-background": "#0b1c30",
+                        "on-tertiary-fixed": "#2a1700",
+                        "on-secondary-fixed-variant": "#005236",
+                        "surface-container-low": "#eff4ff",
+                        "inverse-primary": "#b4c5ff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-tint": "#0053db",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "surface-container": "#e5eeff",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#f8f9ff",
+                        "secondary": "#006c49",
+                        "on-tertiary-container": "#ffeedd",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#00174b",
+                        "background": "#f8f9ff",
+                        "tertiary-fixed": "#ffddb8",
+                        "outline-variant": "#c3c6d7",
+                        "on-surface-variant": "#434655",
+                        "on-primary-container": "#eeefff",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-surface": "#0b1c30",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "primary-container": "#2563eb",
+                        "inverse-surface": "#213145"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        "stack-lg": "24px",
+                        "base": "8px",
+                        "stack-sm": "4px",
+                        "gutter": "16px",
+                        "stack-md": "12px",
+                        "container-padding": "20px"
+                    },
+                    fontFamily: {
+                        "reward-display": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "body-lg": ["Quicksand"],
+                        "label-caps": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-md": ["Quicksand"]
+                    },
+                    fontSize: {
+                        "reward-display": ["48px", { "lineHeight": "48px", "fontWeight": "800" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["26px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "500" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "800" }],
+                        "headline-md": ["24px", { "lineHeight": "30px", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "500" }]
+                    }
+                }
             }
-          },
-        },
-      }
+        }
     </script>
-<style>
-        .shadow-stroke {
-            box-shadow: 0 4px 0 0 rgba(0, 0, 0, 0.1);
+    
+    <style>
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+        body {
+            min-height: 100dvh;
+            background: #f8f9ff;
+            font-family: 'Quicksand', sans-serif;
+            overflow-x: hidden;
+            user-select: none;
         }
         .shadow-stroke-primary {
             box-shadow: 0 4px 0 0 #003ea8;
-        }
-        .shadow-stroke-secondary {
-            box-shadow: 0 4px 0 0 #005236;
-        }
-        .card-blur {
-            backdrop-filter: blur(12px);
         }
         .login-transition {
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
     </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
 </head>
-<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col items-center justify-center overflow-x-hidden">
-<!-- Atmospheric Shader Background -->
-<div class="fixed inset-0 -z-10 opacity-30">
+<body>
+    <main class="w-full max-w-md mx-auto px-gutter py-stack-lg flex flex-col items-center min-h-screen justify-center">
+        <!-- Logo -->
+        <div class="mb-stack-lg flex flex-col items-center gap-base">
+            <div class="w-20 h-20 bg-primary-container rounded-3xl flex items-center justify-center shadow-stroke-primary transform rotate-3 hover:rotate-0 transition-transform duration-300">
+                <span class="material-symbols-outlined text-white text-5xl" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+            </div>
+            <h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight mt-4">KidUp</h1>
+            <p class="text-on-surface-variant text-sm">¡Crece con cada tarea!</p>
+        </div>
 
-</div>
-<!-- Main Container -->
-<main class="w-full max-w-md px-gutter py-stack-lg flex flex-col items-center relative">
-<!-- Logo Section -->
-<div class="mb-stack-lg flex flex-col items-center gap-base animate-fade-in">
-<div class="w-20 h-20 bg-primary-container rounded-3xl flex items-center justify-center shadow-stroke-primary transform rotate-3 hover:rotate-0 transition-transform duration-300">
-<span class="material-symbols-outlined text-white text-5xl" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
-</div>
-<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight mt-4">Kinetic Growth</h1>
-</div>
-<!-- Welcome Headline -->
-<div class="text-center mb-stack-lg">
-<h2 class="font-headline-md text-headline-md text-on-background">¡Hola de nuevo!</h2>
-<p class="font-body-md text-body-md text-on-surface-variant">¿Quién está listo para crecer hoy?</p>
-</div>
-<!-- Role Selector (Tabs) -->
-<div class="w-full bg-surface-container-low rounded-full p-1.5 flex mb-stack-lg border border-outline-variant">
-<button class="flex-1 py-3 px-4 rounded-full font-label-caps text-label-caps login-transition bg-primary-container text-white shadow-sm" id="tab-hijos" onclick="switchMode('hijos')">
+        <!-- Welcome -->
+        <div class="text-center mb-stack-lg">
+            <h2 class="font-headline-md text-headline-md text-on-background">¡Hola de nuevo!</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant">¿Quién está listo para crecer hoy?</p>
+        </div>
+
+        <!-- Tabs -->
+        <div class="w-full bg-surface-container-low rounded-full p-1.5 flex mb-stack-lg border border-outline-variant">
+            <button class="flex-1 py-3 px-4 rounded-full font-label-caps text-label-caps login-transition bg-primary-container text-white shadow-sm" id="tab-hijos" onclick="switchMode('hijos')">
                 HIJOS
             </button>
-<button class="flex-1 py-3 px-4 rounded-full font-label-caps text-label-caps login-transition text-on-surface-variant hover:bg-surface-container-high" id="tab-padres" onclick="switchMode('padres')">
+            <button class="flex-1 py-3 px-4 rounded-full font-label-caps text-label-caps login-transition text-on-surface-variant hover:bg-surface-container-high" id="tab-padres" onclick="switchMode('padres')">
                 PADRES
             </button>
-</div>
-<!-- Login Card -->
-<div class="w-full bg-white rounded-3xl p-stack-lg shadow-lg border border-outline-variant/30 relative overflow-hidden login-transition" id="login-card">
-<!-- Hijos View (Avatar-based) -->
-<div class="flex flex-col gap-gutter" id="view-hijos">
-<p class="text-center font-body-md text-on-surface-variant mb-2">Selecciona tu perfil</p>
-<div class="grid grid-cols-2 gap-4">
-<button class="flex flex-col items-center gap-2 group p-4 rounded-2xl hover:bg-primary-fixed transition-all border-2 border-transparent hover:border-primary">
-<div class="w-24 h-24 rounded-full overflow-hidden border-4 border-surface-container-high group-hover:scale-110 transition-transform">
-<img class="w-full h-full object-cover" data-alt="A friendly 3D cartoon avatar of a young girl with pigtails wearing a blue hoodie, high-quality digital art style, soft studio lighting, vibrant colors consistent with a modern kid-friendly education app, set against a solid light blue background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVQeV6rTRSKRSeFlHX9FKKybdBcRyjcrfTDMDbLz82_pMh4vyWiJ7cY50G4P3QgEIP0glqbf5YSqTXAnojvt1CMgYd1Gzkciv2WoyniVcTcKcIrgK8SWNbURJVFxhYpfY-er2L_mwQhB4AMWbGfeZdE0zo7gXh-LBQ2gL-Qu1lQKZmY9YKBQGZ-pPlN_CY6H3nNZ1z6xW6S95ftukdXv6g_QP31KXFImgXqfPXusx7Z37QJOMO0k8ajGmP_0ds8dITwXFGyxto"/>
-</div>
-<span class="font-headline-md text-headline-md text-on-surface">Sofía</span>
-<div class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Level 12</div>
-</button>
-<button class="flex flex-col items-center gap-2 group p-4 rounded-2xl hover:bg-primary-fixed transition-all border-2 border-transparent hover:border-primary">
-<div class="w-24 h-24 rounded-full overflow-hidden border-4 border-surface-container-high group-hover:scale-110 transition-transform">
-<img class="w-full h-full object-cover" data-alt="A cheerful 3D cartoon avatar of a young boy with curly hair wearing a green t-shirt, high-quality digital art style, soft lighting, playful and energetic mood, colors integrated with a professional blue and white UI palette, set against a solid light teal background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJxSkZzjcGTL13TG2HfEqcLHUFXxdrO9oGaVvl2E0IhbVQ128thybpIpf2dFVVSKOVMG_HPYG3fRJan0_RzgDNyaNbFXv5seyJdxAm-WOE7Q6SE6dCVOm_4phMQLeAIZ-qjfdCOAqBtxboItVGgq2wqBhw8m2OHW3DXGS-sJifwXurppJdQnR7MILAnuO7c0ed_HZHel7vQIvgv5j-o2E9TOQDkg2wXCvmm5k5-PO5dLdB1nceEl7IicKLJi3euuPHdfWsXXel"/>
-</div>
-<span class="font-headline-md text-headline-md text-on-surface">Mateo</span>
-<div class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Level 8</div>
-</button>
-</div>
-<button class="mt-4 flex items-center justify-center gap-2 py-4 rounded-2xl border-2 border-dashed border-outline-variant text-on-surface-variant font-body-md hover:bg-surface-container-low transition-colors">
-<span class="material-symbols-outlined">add_circle</span>
+        </div>
+
+        <!-- Login Card -->
+        <div class="w-full bg-white rounded-3xl p-stack-lg shadow-lg border border-outline-variant/30 relative overflow-hidden login-transition" id="login-card">
+            <!-- Hijos View - AVATARES INFANTILES ORIGINALES -->
+            <div class="flex flex-col gap-gutter" id="view-hijos">
+                <p class="text-center font-body-md text-on-surface-variant mb-2">Selecciona tu perfil</p>
+                <div class="grid grid-cols-2 gap-4">
+                    <!-- Sofía -->
+                    <button onclick="loginChild('Sofía', 12)" class="flex flex-col items-center gap-2 group p-4 rounded-2xl hover:bg-primary-fixed transition-all border-2 border-transparent hover:border-primary">
+                        <div class="w-24 h-24 rounded-full overflow-hidden border-4 border-surface-container-high group-hover:scale-110 transition-transform">
+                            <img class="w-full h-full object-cover" 
+                                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVQeV6rTRSKRSeFlHX9FKKybdBcRyjcrfTDMDbLz82_pMh4vyWiJ7cY50G4P3QgEIP0glqbf5YSqTXAnojvt1CMgYd1Gzkciv2WoyniVcTcKcIrgK8SWNbURJVFxhYpfY-er2L_mwQhB4AMWbGfeZdE0zo7gXh-LBQ2gL-Qu1lQKZmY9YKBQGZ-pPlN_CY6H3nNZ1z6xW6S95ftukdXv6g_QP31KXFImgXqfPXusx7Z37QJOMO0k8ajGmP_0ds8dITwXFGyxto" 
+                                 alt="Sofía" />
+                        </div>
+                        <span class="font-headline-md text-headline-md text-on-surface">Sofía</span>
+                        <div class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">⭐ Level 12</div>
+                    </button>
+                    
+                    <!-- Mateo -->
+                    <button onclick="loginChild('Mateo', 8)" class="flex flex-col items-center gap-2 group p-4 rounded-2xl hover:bg-primary-fixed transition-all border-2 border-transparent hover:border-primary">
+                        <div class="w-24 h-24 rounded-full overflow-hidden border-4 border-surface-container-high group-hover:scale-110 transition-transform">
+                            <img class="w-full h-full object-cover" 
+                                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJxSkZzjcGTL13TG2HfEqcLHUFXxdrO9oGaVvl2E0IhbVQ128thybpIpf2dFVVSKOVMG_HPYG3fRJan0_RzgDNyaNbFXv5seyJdxAm-WOE7Q6SE6dCVOm_4phMQLeAIZ-qjfdCOAqBtxboItVGgq2wqBhw8m2OHW3DXGS-sJifwXurppJdQnR7MILAnuO7c0ed_HZHel7vQIvgv5j-o2E9TOQDkg2wXCvmm5k5-PO5dLdB1nceEl7IicKLJi3euuPHdfWsXXel" 
+                                 alt="Mateo" />
+                        </div>
+                        <span class="font-headline-md text-headline-md text-on-surface">Mateo</span>
+                        <div class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">⭐ Level 8</div>
+                    </button>
+                </div>
+                <button class="mt-4 flex items-center justify-center gap-2 py-4 rounded-2xl border-2 border-dashed border-outline-variant text-on-surface-variant font-body-md hover:bg-surface-container-low transition-colors">
+                    <span class="material-symbols-outlined">add_circle</span>
                     Añadir perfil
                 </button>
-</div>
-<!-- Padres View (Email/Password) -->
-<div class="hidden flex flex-col gap-stack-md" id="view-padres">
-<div class="flex flex-col gap-1">
-<label class="font-label-caps text-label-caps text-on-surface-variant ml-2">CORREO ELECTRÓNICO</label>
-<div class="relative">
-<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">mail</span>
-<input class="w-full pl-12 pr-4 py-4 rounded-2xl bg-surface border-none focus:ring-2 focus:ring-primary font-body-md text-on-surface placeholder:text-outline-variant" placeholder="nombre@ejemplo.com" type="email"/>
-</div>
-</div>
-<div class="flex flex-col gap-1">
-<label class="font-label-caps text-label-caps text-on-surface-variant ml-2">CONTRASEÑA</label>
-<div class="relative">
-<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">lock</span>
-<input class="w-full pl-12 pr-4 py-4 rounded-2xl bg-surface border-none focus:ring-2 focus:ring-primary font-body-md text-on-surface placeholder:text-outline-variant" placeholder="••••••••" type="password"/>
-</div>
-</div>
-<div class="flex justify-end">
-<a class="font-label-caps text-label-caps text-primary hover:underline" href="#">¿Olvidaste tu contraseña?</a>
-</div>
-<button class="w-full bg-primary text-white py-4 rounded-2xl font-headline-md text-headline-md shadow-stroke-primary hover:brightness-110 active:scale-95 transition-all mt-4">
+            </div>
+
+            <!-- Padres View -->
+            <div class="hidden flex flex-col gap-stack-md" id="view-padres">
+                <div class="flex flex-col gap-1">
+                    <label class="font-label-caps text-label-caps text-on-surface-variant ml-2">CORREO ELECTRÓNICO</label>
+                    <div class="relative">
+                        <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">mail</span>
+                        <input id="parent-email" class="w-full pl-12 pr-4 py-4 rounded-2xl bg-surface border-none focus:ring-2 focus:ring-primary font-body-md text-on-surface placeholder:text-outline-variant" placeholder="nombre@ejemplo.com" type="email" />
+                    </div>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <label class="font-label-caps text-label-caps text-on-surface-variant ml-2">CONTRASEÑA</label>
+                    <div class="relative">
+                        <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">lock</span>
+                        <input id="parent-password" class="w-full pl-12 pr-4 py-4 rounded-2xl bg-surface border-none focus:ring-2 focus:ring-primary font-body-md text-on-surface placeholder:text-outline-variant" placeholder="••••••••" type="password" />
+                    </div>
+                </div>
+                <div class="flex justify-end">
+                    <a class="font-label-caps text-label-caps text-primary hover:underline" href="#">¿Olvidaste tu contraseña?</a>
+                </div>
+                <button onclick="loginParent()" class="w-full bg-primary text-white py-4 rounded-2xl font-headline-md text-headline-md shadow-stroke-primary hover:brightness-110 active:scale-95 transition-all mt-4">
                     Iniciar Sesión
                 </button>
-</div>
-</div>
-<!-- Social Logins (Only for Parents) -->
-<div class="hidden w-full mt-stack-lg flex flex-col items-center gap-stack-md" id="social-container">
-<div class="flex items-center w-full gap-4">
-<div class="h-px bg-outline-variant flex-1"></div>
-<span class="font-label-caps text-label-caps text-outline">O CONTINÚA CON</span>
-<div class="h-px bg-outline-variant flex-1"></div>
-</div>
-<div class="flex gap-4 w-full">
-<button class="flex-1 flex items-center justify-center gap-2 py-4 rounded-2xl bg-white border border-outline-variant hover:bg-surface-container-low transition-colors shadow-sm">
-<img alt="Google" class="w-6 h-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBThkqBTZuyBbEXNSVmgvNBmYOv6CO5hQEioZ_0XxwIVPu4WuwhPTRw3HJyTsa9oSMCc32cdIvmXT89pJrMpVrZCru4qqzloM2Sque2pwd0QxB6r8WN5BTTALOrPYGEDReJhg-ujSMX_CMiz6E5CDIElLp8YbF_rjWw3ti1DzkRXilDBEf-X24zENxYLZhN-fw7XNijNZiy98j3aGCli4EkrircTel2WlxLy6IiKmCPLI0rayvawIjgd44oGlRma6JmAdiatZco"/>
-<span class="font-body-md text-on-surface">Google</span>
-</button>
-<button class="flex-1 flex items-center justify-center gap-2 py-4 rounded-2xl bg-white border border-outline-variant hover:bg-surface-container-low transition-colors shadow-sm">
-<span class="material-symbols-outlined text-black" style="font-variation-settings: 'FILL' 1;">apps</span>
-<span class="font-body-md text-on-surface">Apple</span>
-</button>
-</div>
-</div>
-<!-- Footer Info -->
-<p class="mt-10 font-body-md text-body-md text-on-surface-variant text-center">
+            </div>
+        </div>
+
+        <!-- Social Logins -->
+        <div class="hidden w-full mt-stack-lg flex flex-col items-center gap-stack-md" id="social-container">
+            <div class="flex items-center w-full gap-4">
+                <div class="h-px bg-outline-variant flex-1"></div>
+                <span class="font-label-caps text-label-caps text-outline">O CONTINÚA CON</span>
+                <div class="h-px bg-outline-variant flex-1"></div>
+            </div>
+            <div class="flex gap-4 w-full">
+                <button class="flex-1 flex items-center justify-center gap-2 py-4 rounded-2xl bg-white border border-outline-variant hover:bg-surface-container-low transition-colors shadow-sm">
+                    <img alt="Google" class="w-6 h-6" src="https://www.google.com/images/branding/googleg/1x/googleg_standard_color_128dp.png" />
+                    <span class="font-body-md text-on-surface">Google</span>
+                </button>
+                <button class="flex-1 flex items-center justify-center gap-2 py-4 rounded-2xl bg-white border border-outline-variant hover:bg-surface-container-low transition-colors shadow-sm">
+                    <span class="material-symbols-outlined text-black" style="font-variation-settings: 'FILL' 1;">apps</span>
+                    <span class="font-body-md text-on-surface">Apple</span>
+                </button>
+            </div>
+        </div>
+
+        <p class="mt-10 font-body-md text-body-md text-on-surface-variant text-center">
             ¿No tienes cuenta? <a class="text-primary font-bold hover:underline" href="#">Regístrate ahora</a>
-</p>
-</main>
-<!-- Success Celebration Micro-interaction (Hidden) -->
-<div class="fixed inset-0 pointer-events-none z-50" id="confetti-container"></div>
-<script>
+        </p>
+    </main>
+
+    <script>
         function switchMode(mode) {
             const hijosTab = document.getElementById('tab-hijos');
             const padresTab = document.getElementById('tab-padres');
@@ -233,44 +245,50 @@
             const card = document.getElementById('login-card');
 
             if (mode === 'hijos') {
-                hijosTab.classList.add('bg-primary-container', 'text-white', 'shadow-sm');
-                hijosTab.classList.remove('text-on-surface-variant');
-                padresTab.classList.remove('bg-primary-container', 'text-white', 'shadow-sm');
-                padresTab.classList.add('text-on-surface-variant');
-                
+                hijosTab.className = 'flex-1 py-3 px-4 rounded-full font-label-caps text-label-caps login-transition bg-primary-container text-white shadow-sm';
+                padresTab.className = 'flex-1 py-3 px-4 rounded-full font-label-caps text-label-caps login-transition text-on-surface-variant hover:bg-surface-container-high';
                 hijosView.classList.remove('hidden');
                 padresView.classList.add('hidden');
                 socialContainer.classList.add('hidden');
-                
-                // Card specific style for Hijos (slightly more playful)
                 card.classList.remove('bg-white');
                 card.classList.add('bg-surface-container-lowest');
             } else {
-                padresTab.classList.add('bg-primary-container', 'text-white', 'shadow-sm');
-                padresTab.classList.remove('text-on-surface-variant');
-                hijosTab.classList.remove('bg-primary-container', 'text-white', 'shadow-sm');
-                hijosTab.classList.add('text-on-surface-variant');
-                
+                padresTab.className = 'flex-1 py-3 px-4 rounded-full font-label-caps text-label-caps login-transition bg-primary-container text-white shadow-sm';
+                hijosTab.className = 'flex-1 py-3 px-4 rounded-full font-label-caps text-label-caps login-transition text-on-surface-variant hover:bg-surface-container-high';
                 padresView.classList.remove('hidden');
                 hijosView.classList.add('hidden');
                 socialContainer.classList.remove('hidden');
-                
                 card.classList.add('bg-white');
                 card.classList.remove('bg-surface-container-lowest');
             }
         }
 
-        // Simple scale interaction on all buttons
-        document.querySelectorAll('button').forEach(btn => {
-            btn.addEventListener('mousedown', () => {
-                btn.classList.add('scale-95');
-            });
-            btn.addEventListener('mouseup', () => {
-                btn.classList.remove('scale-95');
-            });
-            btn.addEventListener('mouseleave', () => {
-                btn.classList.remove('scale-95');
-            });
-        });
+        function loginChild(name, level) {
+            localStorage.setItem('kidup_user', name);
+            localStorage.setItem('kidup_level', level);
+            localStorage.setItem('kidup_user_type', 'child');
+            window.location.href = 'tareas.html';
+        }
+
+        function loginParent() {
+            const email = document.getElementById('parent-email').value;
+            if (!email) {
+                alert('Por favor ingresa tu correo electrónico');
+                return;
+            }
+            localStorage.setItem('kidup_user', 'parent');
+            localStorage.setItem('kidup_user_type', 'parent');
+            window.location.href = 'panel.html';
+        }
+
+        // Verificar si ya hay sesión activa
+        const user = localStorage.getItem('kidup_user');
+        const userType = localStorage.getItem('kidup_user_type');
+        if (user && userType === 'child') {
+            window.location.href = 'tareas.html';
+        } else if (user && userType === 'parent') {
+            window.location.href = 'panel.html';
+        }
     </script>
-</body></html>
+</body>
+</html>
