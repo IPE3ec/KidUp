@@ -1,0 +1,120 @@
+{
+  "name": "KidUp - Recompensas para Niños",
+  "short_name": "KidUp",
+  "description": "App de recompensas y tareas para niños. ¡Gana tiempo de pantalla completando tus responsabilidades!",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f8f9ff",
+  "theme_color": "#004ac6",
+  "icons": [
+    {
+      "src": "icons/icon-72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshots/login.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Pantalla de inicio de sesión"
+    },
+    {
+      "src": "screenshots/tasks.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Lista de tareas diarias"
+    },
+    {
+      "src": "screenshots/parents.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Panel de control parental"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Tareas del día",
+      "short_name": "Tareas",
+      "description": "Ver tareas disponibles",
+      "url": "/?action=tasks",
+      "icons": [
+        {
+          "src": "icons/shortcut-tasks.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Panel de control",
+      "short_name": "Panel",
+      "description": "Panel de control parental",
+      "url": "/?action=parents",
+      "icons": [
+        {
+          "src": "icons/shortcut-parents.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "categories": ["education", "productivity", "kids"],
+  "lang": "es",
+  "dir": "ltr",
+  "display_override": ["standalone", "fullscreen"],
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "edge_side_panel": {
+    "preferred_width": 400
+  }
+}
