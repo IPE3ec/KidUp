@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Responsibility Coach - Task List</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100..900&family=Quicksand:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#eeefff",
+                    "surface-container-highest": "#d3e4fe",
+                    "inverse-surface": "#213145",
+                    "on-tertiary-fixed": "#2a1700",
+                    "secondary": "#006c49",
+                    "on-primary": "#ffffff",
+                    "primary-container": "#2563eb",
+                    "outline": "#737686",
+                    "tertiary-container": "#996100",
+                    "on-background": "#0b1c30",
+                    "tertiary-fixed": "#ffddb8",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "on-primary-fixed": "#00174b",
+                    "on-surface": "#0b1c30",
+                    "secondary-container": "#6cf8bb",
+                    "tertiary": "#784b00",
+                    "on-error-container": "#93000a",
+                    "background": "#f8f9ff",
+                    "secondary-fixed-dim": "#4edea3",
+                    "on-tertiary-container": "#ffeedd",
+                    "on-secondary-fixed": "#002113",
+                    "on-error": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed": "#6ffbbe",
+                    "on-secondary-fixed-variant": "#005236",
+                    "surface-container-low": "#eff4ff",
+                    "error-container": "#ffdad6",
+                    "on-secondary-container": "#00714d",
+                    "on-surface-variant": "#434655",
+                    "surface": "#f8f9ff",
+                    "inverse-on-surface": "#eaf1ff",
+                    "surface-container-high": "#dce9ff",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "primary": "#004ac6",
+                    "surface-tint": "#0053db",
+                    "surface-bright": "#f8f9ff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-variant": "#d3e4fe",
+                    "primary-fixed": "#dbe1ff",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "surface-container": "#e5eeff",
+                    "inverse-primary": "#b4c5ff",
+                    "outline-variant": "#c3c6d7",
+                    "surface-dim": "#cbdbf5",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "16px",
+                    "stack-md": "12px",
+                    "base": "8px",
+                    "container-padding": "20px",
+                    "stack-sm": "4px",
+                    "stack-lg": "24px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Quicksand"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "body-md": ["Quicksand"],
+                    "label-caps": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    "reward-display": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "30px", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "500"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "800"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["26px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "reward-display": ["48px", {"lineHeight": "48px", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .task-card {
+            transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 4px 0 0 rgba(0, 0, 0, 0.05);
+        }
+        .task-card:active {
+            transform: scale(0.97);
+            box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.05);
+        }
+        .check-pop {
+            animation: pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        @keyframes pop {
+            0% { transform: scale(0); opacity: 0; }
+            50% { transform: scale(1.4); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .shimmer-bg {
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            background-size: 200% 100%;
+            animation: shimmer 2s infinite linear;
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md min-h-screen pb-32">
+<!-- Top App Bar -->
+<header class="w-full top-0 sticky z-50 bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline flex justify-between items-center px-gutter py-stack-md">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary">
+<img class="w-full h-full object-cover" data-alt="A colorful and friendly 3D avatar of a happy child with short brown hair and a green t-shirt, set against a soft blue studio background with warm, cheerful lighting. The style is modern 3D character design, echoing high-quality animation aesthetics suitable for a premium educational app for kids." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTDcnnRZruo-3SH-IXux-I62tP4ekB2DRb_HTJxtBDCQOYw9CZDlupZjpDsJBo0JTL26sG-CLsify6jE-lwEmO7XMJGTXQZZsypS8l0BC9nFDADIuRMbJGJ5SYz2MpNaLrpkzGgfhHnK8h1lH1TLURY-at0i-WiIZqIFp5gA3QfKYEbQ19cbTq585O-C_b5R3xIJTlPvQtGlGcsaZaOOWBCkULLU2rRLozS1ccEFh2VgxvEaOeRstKsaFxh4qvhhsjb6B0Tgd3"/>
+</div>
+<h1 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim">Responsibility Coach</h1>
+</div>
+<button class="material-symbols-outlined text-primary dark:text-primary-fixed-dim p-2 hover:bg-surface-container-high transition-colors rounded-full" data-icon="settings">settings</button>
+</header>
+<main class="px-gutter pt-stack-lg max-w-md mx-auto">
+<!-- Hero Section / Time Earned -->
+<section class="mb-stack-lg bg-primary-container rounded-xl p-stack-lg text-on-primary-container relative overflow-hidden shadow-lg">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-[120px]" data-icon="timer">timer</span>
+</div>
+<div class="relative z-10">
+<p class="font-label-caps text-label-caps opacity-90 mb-1">TIME EARNED TODAY</p>
+<div class="flex items-baseline gap-2">
+<span class="font-reward-display text-reward-display">1h 45m</span>
+<span class="font-body-md opacity-80">/ 2h Goal</span>
+</div>
+<!-- Progress Bar -->
+<div class="mt-stack-md h-3 w-full bg-on-primary-container/20 rounded-full overflow-hidden">
+<div class="h-full bg-secondary-fixed rounded-full w-[85%] relative overflow-hidden">
+<div class="absolute inset-0 shimmer-bg"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Task List Header -->
+<div class="flex justify-between items-end mb-stack-md">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Daily Tasks</h2>
+<p class="text-on-surface-variant font-body-md">4 Tasks left</p>
+</div>
+<!-- Task Grid (Bento Style) -->
+<div class="grid grid-cols-1 gap-4">
+<!-- Task 1: Available -->
+<div class="task-card bg-surface-container-lowest border border-outline-variant p-4 rounded-xl flex items-center gap-4 hover:border-primary transition-all">
+<button class="w-12 h-12 rounded-xl border-2 border-outline-variant flex items-center justify-center group active:scale-90 transition-transform bg-surface" onclick="toggleComplete(this)">
+<span class="material-symbols-outlined text-transparent group-hover:text-outline-variant select-none" data-icon="check">check</span>
+</button>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h3 class="font-body-lg text-body-lg text-on-surface">Homework</h3>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-2 py-0.5 rounded-lg text-[12px] font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="schedule">schedule</span>
+                            +20m
+                        </span>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<p class="text-[14px] text-primary font-bold uppercase tracking-wider">Available</p>
+</div>
+</div>
+</div>
+<!-- Task 2: Pending -->
+<div class="task-card bg-surface-container border border-outline-variant p-4 rounded-xl flex items-center gap-4 opacity-80">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="hourglass_empty">hourglass_empty</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h3 class="font-body-lg text-body-lg text-on-surface">Feed the Dog</h3>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-2 py-0.5 rounded-lg text-[12px] font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="schedule">schedule</span>
+                            +10m
+                        </span>
+</div>
+<div class="flex items-center gap-2 mt-1 text-on-surface-variant">
+<p class="text-[14px] font-bold uppercase tracking-wider">Pending Approval</p>
+</div>
+</div>
+</div>
+<!-- Task 3: Available -->
+<div class="task-card bg-surface-container-lowest border border-outline-variant p-4 rounded-xl flex items-center gap-4 hover:border-primary transition-all">
+<button class="w-12 h-12 rounded-xl border-2 border-outline-variant flex items-center justify-center group active:scale-90 transition-transform bg-surface" onclick="toggleComplete(this)">
+<span class="material-symbols-outlined text-transparent group-hover:text-outline-variant select-none" data-icon="check">check</span>
+</button>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h3 class="font-body-lg text-body-lg text-on-surface">Clean Room</h3>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-2 py-0.5 rounded-lg text-[12px] font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="schedule">schedule</span>
+                            +30m
+                        </span>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<p class="text-[14px] text-primary font-bold uppercase tracking-wider">Available</p>
+</div>
+</div>
+</div>
+<!-- Task 4: Big Interaction Card -->
+<div class="task-card bg-secondary-container p-6 rounded-2xl border-b-4 border-secondary flex flex-col gap-4 mt-2">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-secondary-container">Practice Piano</h3>
+<p class="text-on-secondary-container opacity-80 font-body-md">Set timer for 15 minutes</p>
+</div>
+<span class="bg-surface-container-lowest text-secondary px-3 py-1 rounded-full text-lg font-black shadow-sm">
+                        +45m
+                    </span>
+</div>
+<button class="w-full bg-on-secondary-container text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="play_circle">play_circle</span>
+                    START NOW
+                </button>
+</div>
+<!-- Task 5: Available -->
+<div class="task-card bg-surface-container-lowest border border-outline-variant p-4 rounded-xl flex items-center gap-4 hover:border-primary transition-all">
+<button class="w-12 h-12 rounded-xl border-2 border-outline-variant flex items-center justify-center group active:scale-90 transition-transform bg-surface" onclick="toggleComplete(this)">
+<span class="material-symbols-outlined text-transparent group-hover:text-outline-variant select-none" data-icon="check">check</span>
+</button>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h3 class="font-body-lg text-body-lg text-on-surface">Take Out Trash</h3>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-2 py-0.5 rounded-lg text-[12px] font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="schedule">schedule</span>
+                            +10m
+                        </span>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<p class="text-[14px] text-primary font-bold uppercase tracking-wider">Available</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Nav Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter pb-6 pt-2 bg-surface-container dark:bg-inverse-surface shadow-[0_-4px_10px_rgba(0,0,0,0.08)] rounded-t-2xl">
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-2" href="#">
+<span class="material-symbols-outlined" data-icon="checklist">checklist</span>
+<span class="font-label-caps text-label-caps mt-1">Tasks</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-2 hover:bg-surface-container-highest transition-all rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-label-caps text-label-caps mt-1">Bank</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-2 hover:bg-surface-container-highest transition-all rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="supervisor_account">supervisor_account</span>
+<span class="font-label-caps text-label-caps mt-1">Parents</span>
+</a>
+</nav>
+<!-- Floating Action Button (FAB) for quick add / info -->
+<div class="fixed right-6 bottom-24 z-40">
+<button class="w-14 h-14 bg-tertiary text-white rounded-2xl shadow-xl border-b-4 border-on-tertiary-fixed-variant flex items-center justify-center active:translate-y-1 active:border-b-0 transition-all">
+<span class="material-symbols-outlined text-3xl" data-icon="emoji_events">emoji_events</span>
+</button>
+</div>
+<script>
+        function toggleComplete(btn) {
+            const icon = btn.querySelector('.material-symbols-outlined');
+            const card = btn.closest('.task-card');
+            
+            if (btn.classList.contains('bg-secondary')) {
+                // Untoggle
+                btn.classList.remove('bg-secondary', 'border-secondary');
+                btn.classList.add('bg-surface', 'border-outline-variant');
+                icon.classList.remove('text-white', 'check-pop');
+                icon.classList.add('text-transparent');
+                card.style.opacity = '1';
+                card.style.transform = 'scale(1)';
+            } else {
+                // Toggle complete
+                btn.classList.add('bg-secondary', 'border-secondary');
+                btn.classList.remove('bg-surface', 'border-outline-variant');
+                icon.classList.add('text-white', 'check-pop');
+                icon.classList.remove('text-transparent');
+                
+                // Visual feedback for completion
+                setTimeout(() => {
+                    card.style.opacity = '0.6';
+                    card.style.transform = 'scale(0.98)';
+                }, 400);
+
+                // Add a small celebration confetti logic could go here
+            }
+        }
+
+        // Ripple Effect for buttons
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('mousedown', function(e) {
+                this.style.transition = 'none';
+                this.style.transform = 'scale(0.95)';
+            });
+            button.addEventListener('mouseup', function() {
+                this.style.transition = 'transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1)';
+                this.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body></html>
